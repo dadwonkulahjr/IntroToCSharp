@@ -6,10 +6,8 @@ namespace IntroToCSharp
     {
         static void Main(string[] args)
         {
-            General general = new Student();
-            student.FirstName = "Specific";
-            student.LastName = "Specific Brother";
-            student.PrintDetails();
+            Student student = new Student();
+           
 
 
 
