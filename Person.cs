@@ -4,8 +4,7 @@ using System.Text;
 
 namespace IntroToCSharp
 {
-    public class General : Student
+    public class Person
     {
-      
     }
 }
