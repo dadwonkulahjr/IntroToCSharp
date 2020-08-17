@@ -6,6 +6,7 @@ namespace IntroToCSharp
 {
     public interface IComax
     {
+        #region IComax Interface Methods Implementation
         Person GetPerson(int id);
         IEnumerable<Person> GetListOfPerson();
         Person Delete(int id);
@@ -13,6 +14,6 @@ namespace IntroToCSharp
         int Count { get; }
 
         Person AddPerson(Person person);
-
+        #endregion
     }
 }

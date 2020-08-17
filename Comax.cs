@@ -4,13 +4,18 @@ using System.Text;
 
 namespace IntroToCSharp
 {
+    #region Struct Type
     public struct Comax
     {
+        #region Auto Implemented Propertities
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string Gender { get; set; } 
+        public string Gender { get; set; }
+        #endregion
+
+        #region Default Constructor & Developer Constructor
         public Comax(int id, string firstName, string lastName, string email)
         {
             Id = id;
@@ -28,7 +33,9 @@ namespace IntroToCSharp
             Gender = gender;
             
         }
+        #endregion
     }
+    #endregion
 
-    
+
 }

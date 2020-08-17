@@ -11,8 +11,11 @@ namespace IntroToCSharp
     //Object In Memory...
     public class MockPerson : IComax
     {
+        #region Fields
         private List<Person> _listOfPersons;
+        #endregion
 
+        #region Constructor
         public MockPerson()
         {
             _listOfPersons = new List<Person>()
@@ -22,15 +25,21 @@ namespace IntroToCSharp
                 new Person(){Id=3, FirstName="Francis", LastName="Smith"}
             };
         }
+        #endregion
 
+        #region Property
         //Get the total count of Persons
         //In memory using the List<Person> class...
         public int Count
         {
             get { return _listOfPersons.Count; }
         }
+        #endregion
+
+        #region Methods
         //Add a person to the List<Person> class
         //In memory
+
         public Person AddPerson(Person person)
         {
             person.Id = _listOfPersons.Max(x => x.Id) + 1;
@@ -88,5 +97,6 @@ namespace IntroToCSharp
                 throw new Exception($"Person with Id = #{personChanges.Id} cannot be found, neither updated.");
             }
         }
+        #endregion
     }
 }

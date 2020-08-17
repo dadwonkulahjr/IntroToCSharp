@@ -6,6 +6,8 @@ namespace IntroToCSharp
 {
     public interface IEmployee 
     {
+        #region One Method
         void PrintEmployeeDetails();
+        #endregion
     }
 }

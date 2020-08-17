@@ -4,10 +4,12 @@ using System.Text;
 
 namespace IntroToCSharp
 {
-
+    #region Delegate
     public delegate void MulticastDelegate(out int number);
+    #endregion
     public class Employee
     {
+        #region Methods
         public void SimpleMethodOne(out int value)
         {
             value = 1;
@@ -21,6 +23,6 @@ namespace IntroToCSharp
         {
             value = 3;
         }
-
+        #endregion
     }
 }

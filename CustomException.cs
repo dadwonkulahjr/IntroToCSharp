@@ -8,6 +8,7 @@ namespace IntroToCSharp
     [Serializable]
     public class CustomException : Exception
     {
+        #region Constructors
         public CustomException()
            :base()
         {
@@ -29,12 +30,15 @@ namespace IntroToCSharp
         {
 
         }
+        #endregion
 
+        #region Property
         public override string HelpLink
         {
             get { return base.HelpLink; }
             set { base.HelpLink = value; }
             
         }
+        #endregion
     }
 }

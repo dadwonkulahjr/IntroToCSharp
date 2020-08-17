@@ -9,9 +9,12 @@ namespace IntroToCSharp
     //2 - Female
     public class Customer 
     {
+        #region Auto Implemented Properties
         public string Name { get; set; }
         public Gender Gender { get; set; }
+        #endregion
 
+        #region Methods
         public static List<Customer> GetPeople()
         {
             return new List<Customer>()
@@ -22,7 +25,7 @@ namespace IntroToCSharp
                 new Customer(){Name="Princess", Gender=Gender.Unknown}
             };
         }
-
+      
         public async static void GetArrayOfCustomers()
         {
             Customer[] customers = new Customer[3];
@@ -58,12 +61,15 @@ namespace IntroToCSharp
                 return "Invalid data detected.";
             }
         }
+        #endregion
     }
 
-    public enum Gender
+    #region Gender Enum
+    public enum Gender : short
     {
         Unknown = 0,
         Male, 
         Female
     }
+    #endregion
 }
