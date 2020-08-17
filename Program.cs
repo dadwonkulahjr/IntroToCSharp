@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace IntroToCSharp
 {
@@ -7,55 +8,23 @@ namespace IntroToCSharp
 
         static void Main(string[] args)
         {
-            try
+            int[] values = (int[])Enum.GetValues(typeof(System.ConsoleColor));
+            string[] names = Enum.GetNames(typeof(System.ConsoleColor));
+            Console.WriteLine("Values in System.UriPartial Enum");
+            foreach (var item in values)
             {
-                MockPerson mockPerson = new MockPerson();
-                var beforeListOfPersons = mockPerson.GetListOfPerson();
-                Console.WriteLine("Before:");
-                foreach (var item in beforeListOfPersons)
-                {
-                    Console.WriteLine(item.FirstName + " - " + item.LastName + " - " + item.Id);
-                }
-                Console.WriteLine();
-                int countBefore = mockPerson.Count;
-                Console.WriteLine($"Total persons count is = {countBefore}");
-                Console.WriteLine();
-                Console.WriteLine("Now:");
-                Person person = mockPerson.AddPerson(new Person() { FirstName = "Precious", LastName = "Wonkulah" });
-                countBefore = mockPerson.Count;
-                Console.WriteLine($"Total persons count is = {countBefore}");
-                Console.WriteLine(  );
-                foreach (var item in beforeListOfPersons)
-                {
-                    Console.WriteLine(item.FirstName + " - " + item.LastName + " - " + item.Id);
-                }
-                person = mockPerson.AddPerson(new Person() { FirstName = "Dacious", LastName = "Wonkulah" });
-                countBefore = mockPerson.Count;
-                Console.WriteLine();
-                Console.WriteLine($"Total persons count is = {countBefore}");
-                Console.WriteLine();
-                foreach (var item in beforeListOfPersons)
-                {
-                    Console.WriteLine(item.FirstName + " - " + item.LastName + " - " + item.Id);
-                }
-                Console.WriteLine();
-                person = mockPerson.Delete(1);
-                countBefore = mockPerson.Count;
-                Console.WriteLine($"Total persons count is = {countBefore}");
-                foreach (var item in beforeListOfPersons)
-                {
-                    Console.WriteLine(item.FirstName + " - " + item.LastName + " - " + item.Id);
-                }
+                Console.WriteLine(item);
             }
-            catch (Exception ex)
+            Console.WriteLine();
+            Console.WriteLine("Names in System.UriPartial Enum");
+            foreach (var item in names)
             {
-
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(item);
             }
-
-
+          
             Console.ReadLine();
         }
+
 
     }
 

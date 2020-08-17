@@ -5,6 +5,10 @@ using System.Text;
 
 namespace IntroToCSharp
 {
+    //This class can
+    //perform all the CRUD operations
+    //Create, Retrieved, Update, and Delete a Person
+    //Object In Memory...
     public class MockPerson : IComax
     {
         private List<Person> _listOfPersons;
@@ -19,22 +23,25 @@ namespace IntroToCSharp
             };
         }
 
+        //Get the total count of Persons
+        //In memory using the List<Person> class...
         public int Count
         {
             get { return _listOfPersons.Count; }
         }
-
+        //Add a person to the List<Person> class
+        //In memory
         public Person AddPerson(Person person)
         {
             person.Id = _listOfPersons.Max(x => x.Id) + 1;
             _listOfPersons.Add(person);
             return person;
         }
-
+        //Delete a person from the List<Person> class
         public Person Delete(int id)
         {
             Person person = _listOfPersons.FirstOrDefault(x => x.Id == id);
-            if(person != null)
+            if (person != null)
             {
                 _listOfPersons.Remove(person);
                 return person;
@@ -44,12 +51,14 @@ namespace IntroToCSharp
                 throw new Exception($"Person with Id = #{id} cannot be found, neither deleted.");
             }
         }
-
+        //Retrieved all the person objects in memory
+        //inside the List<Person> class
         public IEnumerable<Person> GetListOfPerson()
         {
             return _listOfPersons;
         }
-
+        //Retrieved a specific person from in memory
+        //Using the List<Person> class
         public Person GetPerson(int id)
         {
             Person person = _listOfPersons.FirstOrDefault(x => x.Id == id);
@@ -63,7 +72,8 @@ namespace IntroToCSharp
                 throw new Exception($"Person with Id = #{id} cannot be found.");
             }
         }
-
+        //Update a person in the List<Person> object
+        //in memory..
         public Person Update(Person personChanges)
         {
             Person person = _listOfPersons.FirstOrDefault(x => x.Id == personChanges.Id);

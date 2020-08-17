@@ -30,8 +30,5 @@ namespace IntroToCSharp
         }
     }
 
-    public struct TuseTheProgrammer
-    {
-
-    }
+    
 }

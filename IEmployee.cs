@@ -4,11 +4,8 @@ using System.Text;
 
 namespace IntroToCSharp
 {
-    public class People
+    public interface IEmployee 
     {
-       
-        
-
-
+        void PrintEmployeeDetails();
     }
 }
