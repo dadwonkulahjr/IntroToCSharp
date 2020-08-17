@@ -12,6 +12,9 @@ namespace IntroToCSharp
         #region Auto Implemented Properties
         public string Name { get; set; }
         public Gender Gender { get; set; }
+        public int Id { get; set; }
+        protected string Message { get; set; }
+
         #endregion
 
         #region Methods
@@ -61,6 +64,8 @@ namespace IntroToCSharp
                 return "Invalid data detected.";
             }
         }
+
+        
         #endregion
     }
 

@@ -1,0 +1,59 @@
+Add first
+Commit second
+Push third
+
+car license plate George Friend 5590
+
+Internal is accessible right in the same Assembly but not different Assembly,
+even if you inherit from that class, is stay going to be inaccessible.
+
+Protected Internal is accessible
+
+Class members mark with the Internal and Protected Internal Access Modifiers
+are not accessiable from outside the class but they are accessible from within the class....
+When you create instance of that class you will not see the protected memebers
+
+When a class member is mark with the Protected Internal Access Modifier you can
+access those members by inheriting from the class, than all those members mark with
+the Protected Internal Access Modifiers will be accessible in different Assembly, but 
+Members mark with Internal will not be accessible...
+
+
+When a Class member is mark with the Protected Access modifier,
+those members are only accessible from within the Class only, if you want to
+access members mark with the Protected Accessible modifier, you will
+have to inherit from the class, than you will be able to get access to 
+the protected members of that class
+
+Whan a Class member is mark with the Private Access Modifier
+those members are only accessible from within the Class only...
+
+
+Whan a Class member is mark with the Public Access Modifier
+those members are accessible from Class and in other Assemblies...
+
+
+In Short Term
+C# Five types of Access Modifiers...
+By Default all fields are private from within Class...
+But when use with the public Access modifier fields become Pubic.
+
+1. Private Members - Not accessible from outside the class and not accessible in other Assemblies...
+
+2. Public Members - Accessible from outside the class and also in other Assemblies...
+
+3. Protected Members - Not accessible from outside the class and not accessible in other Assemblies...
+to get access on protected members, Your class have to Derived from the Parent class to be able to 
+access the Protected Members....
+
+4. Internal Members - Not accessible from outside the class but accessible from within the same Assemblies
+
+5. Protected Internal - Not accessible from outside the class but accessible from within the Same Assembles
+and also accessible in Derived classes....
+
+
+
+
+
+
+
