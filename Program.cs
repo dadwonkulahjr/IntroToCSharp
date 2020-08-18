@@ -1,25 +1,27 @@
-﻿using CustomeLiberyII;
-using CustomLibery;
-using System;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace IntroToCSharp
 {
-    class Program 
+    class Program
     {
-       
-        static void Main(string[] args)
+
+        static void Main()
         {
 
-            Play play = new Play();
-            
+          
+
             Console.ReadLine();
         }
 
 
     }
-
    
-
-
+   
+ 
 }
+
+
+
+

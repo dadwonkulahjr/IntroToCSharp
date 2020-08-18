@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntroToCSharp", "IntroToCSharp.csproj", "{76B47B65-5996-4D78-87E3-D8BAD614D1C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLibery", "..\CustomLibery\CustomLibery.csproj", "{888C9DA3-188F-46C1-AF44-7144D69311E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLibery", "..\CustomLibery\CustomLibery.csproj", "{888C9DA3-188F-46C1-AF44-7144D69311E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomeLiberyII", "..\CustomeLiberyII\CustomeLiberyII.csproj", "{969DBCEE-6A92-46E3-9A13-AB3CC1449208}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomeLiberyII", "..\CustomeLiberyII\CustomeLiberyII.csproj", "{969DBCEE-6A92-46E3-9A13-AB3CC1449208}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

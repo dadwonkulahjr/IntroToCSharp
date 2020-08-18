@@ -43,7 +43,7 @@ But when use with the public Access modifier fields become Pubic.
 2. Public Members - Accessible from outside the class and also in other Assemblies...
 
 3. Protected Members - Not accessible from outside the class and not accessible in other Assemblies...
-to get access on protected members, Your class have to Derived from the Parent class to be able to 
+to get access on protected members, Your class have to Derived from the Base class to be able to 
 access the Protected Members....
 
 4. Internal Members - Not accessible from outside the class but accessible from within the same Assemblies
@@ -52,8 +52,49 @@ access the Protected Members....
 and also accessible in Derived classes....
 
 
+A type Defined with Internal can only be access within the same assembly,
+try accessing it in different assembly will generate a compiler error.
+
+Types Default is Internal in C# programming...
+By Default Interface members are public
+By Default Abstract class members are private, so always use the public access modifier
+on it..
+
+What are types in C#?
+Types are:
+Classes
+Interfaces
+Delegates
+Events
+Enums
+Structs
+
+What are Value types in C#
+Value types are:
+Struct
+Enum
+Int
+Double
+Decimal
+Short
+Small
+Long
+Etc
+What are Reference types in C#
+Reference types are:
+Classes
+Interfaces
+Delegates
+Events
 
 
+//Late Binding Code using Reflection...
+  Assembly assembly = Assembly.GetExecutingAssembly();
+            var type = assembly.GetType("Intro.Test");
+            object testInstance = Activator.CreateInstance(type);
 
+            var memberInfo = type.GetMethod("PrintName");
 
-
+            string[] name = new string[2] { "Dad", "Wonkulah" };
+            string fullName = (string)memberInfo.Invoke(testInstance, name);
+            Console.WriteLine("FullName: " + fullName);
