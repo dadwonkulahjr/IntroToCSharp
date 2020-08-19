@@ -98,3 +98,29 @@ Events
             string[] name = new string[2] { "Dad", "Wonkulah" };
             string fullName = (string)memberInfo.Invoke(testInstance, name);
             Console.WriteLine("FullName: " + fullName);
+
+Overiding the System.Object Method
+for my Type....the toString() Method GetHashCode() Equals() method..
+
+for the toString, Equals and GetHashCode Method respectely..
+  public override string ToString()
+        {
+            return string.Format($"Id: {Id} && Name: {Name}");
+        }
+        public override bool Equals(object obj)
+        {
+           
+            if(obj == null)
+            {
+                return false;
+            }
+            if(!(obj is Helper))
+            {
+                return false;
+            }
+            return Id == ((Helper)obj).Id && Name == ((Helper)obj).Name;
+        }
+ public override int GetHashCode()
+        {
+            return Name.GetHashCode() ^ Id.GetHashCode();
+        }

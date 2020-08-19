@@ -6,21 +6,24 @@ namespace IntroToCSharp
 {
     public class Helper
     {
-        protected int _id;
-        public int Id
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Helper(int id, string name)
         {
-            get { return _id; }
-            set { _id = value; }
+            Id = id;
+            Name = name;
+        }
+        public Helper()
+        {
+            Id = 0;
+            Name = string.Empty;
         }
 
-    }
-
-    public class Test : Helper
-    {
-        public Test()
+        public void Data(string firstName,string lastName)
         {
-           _id = 17019; 
+            Console.WriteLine($"Fullname: {lastName + " " + firstName}");
         }
-
     }
+
+  
 }
