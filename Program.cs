@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace IntroToCSharp
@@ -11,14 +12,24 @@ namespace IntroToCSharp
 
         static void Main()
         {
-            CustomPartial customPartial = new CustomPartial(1, "Mark", "Smith");
-            string fullName = customPartial.PrintInfo();
-            Console.WriteLine($"Fullname: {fullName}");
+            try
+            {
+                for (int tuse = 0; tuse < length; tuse++)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
 
             Console.ReadLine();
         }
 
 
+       
     }
   
    

@@ -9,20 +9,25 @@ namespace IntroToCSharp
     #endregion
     public class Employee
     {
-        #region Methods
-        public void SimpleMethodOne(out int value)
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public Gender Gender { get; set; }
+        public Employee(int id, string name, string email, Gender gender)
         {
-            value = 1;
+            Id = id;
+            Name = name;
+            Email = email;
+            Gender = gender;
         }
-        public void SimpleMethodTwo(out int value)
+        public Employee()
         {
-            value = 2;
-          
+            Id = 0;
+            Name = string.Empty;
+            Email = string.Empty;
+           
         }
-        public void SimpleMethodThree(out int value)
-        {
-            value = 3;
-        }
-        #endregion
+
+     
     }
 }
