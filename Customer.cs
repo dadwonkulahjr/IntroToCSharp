@@ -7,7 +7,7 @@ namespace IntroToCSharp
     //0 - Unknown
     //1 - Male
     //2 - Female
-    public class Customer 
+    public class Customer
     {
         #region Auto Implemented Properties
         public string Name { get; set; }
@@ -22,13 +22,13 @@ namespace IntroToCSharp
         {
             return new List<Customer>()
             {
-                new Customer(){Name="Mark", Gender=Gender.Male},
-                new Customer(){Name="Mary", Gender=Gender.Female},
-                new Customer(){Name="Sam", Gender=Gender.Unknown},
-                new Customer(){Name="Princess", Gender=Gender.Unknown}
+                new Customer(){Name="Mark", Gender=Gender.Male, Id=1},
+                new Customer(){Name="Mary", Gender=Gender.Female,Id=2},
+                new Customer(){Name="Sam", Gender=Gender.Unknown,Id=3},
+                new Customer(){Name="Princess", Gender=Gender.Unknown,Id=4}
             };
         }
-      
+
         public async static void GetArrayOfCustomers()
         {
             Customer[] customers = new Customer[3];
@@ -39,12 +39,15 @@ namespace IntroToCSharp
 
             for (int i = 0; i < customers.Length; i++)
             {
-              Console.WriteLine($"Name: {customers[i].Name} && Gender : {customers[i].Gender}");
+                Console.WriteLine($"Name: {customers[i].Name} && Gender : {customers[i].Gender}");
             }
 
             await new System.Threading.Tasks.Task(new Action(GetArrayOfCustomers));
         }
-
+        public override string ToString()
+        {
+            return string.Concat($"Name = {Name} && Gender = {Gender} && Id = {Id.ToString()}");
+        }
         public static string CheckPersonGender(int gender)
         {
             if (gender == 0)
@@ -65,7 +68,7 @@ namespace IntroToCSharp
             }
         }
 
-        
+
         #endregion
     }
 
@@ -73,7 +76,7 @@ namespace IntroToCSharp
     public enum Gender : short
     {
         Unknown = 0,
-        Male, 
+        Male,
         Female
     }
     #endregion
