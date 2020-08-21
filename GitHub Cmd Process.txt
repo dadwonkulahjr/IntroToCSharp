@@ -124,3 +124,15 @@ for the toString, Equals and GetHashCode Method respectely..
         {
             return Name.GetHashCode() ^ Id.GetHashCode();
         }
+
+
+Two interfaces in Dot Net Framework
+that give you the ability to sort Strongly Types are
+IComparable 
+IComparer
+
+Delegate Syntax:
+ listOfEmployeesPartTimeEmployee.Sort(delegate (Employee e1, Employee e2)
+                {
+                    return e1.Name.CompareTo(e2.Name);
+                });

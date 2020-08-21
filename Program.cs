@@ -14,45 +14,111 @@ namespace IntroToCSharp
         {
             Console.WriteLine($"Id = {employee.Id} && Name = {employee.Name} && Email = {employee.Email} && Salary = {employee.Salary.ToString("c")} && Gender = {employee.Gender} ");
         }
+        public static int CustomEmployeeSort(Employee x, Employee y)
+        {
+            return x.Salary.CompareTo(y.Salary);
+        }
         static void Main()
         {
             try
             {
+                List<Employee> listOfEmployeesFullTimeEmployee = Employee.FullTimeEmployee();
+                List<Employee> listOfEmployeesPartTimeEmployee = Employee.PartTimeEmployee();
+                Console.WriteLine("Before Sorting Part time Employee:");
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine($"ID = {e.Id.ToString()} Name = {e.Name} Gender = {e.Gender}" +
+                        $" Salary = {e.Salary.ToString("c")} Type Of Employee = {e.Type}");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Now after Sorting By Name in Ascending:");
+                SortEmployeeByName sortEmployeeByName = new SortEmployeeByName();
+                listOfEmployeesPartTimeEmployee.Sort(sortEmployeeByName);
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine($"ID = {e.Id.ToString()} Name = {e.Name} Gender = {e.Gender}" +
+                        $" Salary = {e.Salary.ToString("c")} Type Of Employee = {e.Type}");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Sorting Name in Descending Order:");
+                listOfEmployeesPartTimeEmployee.Reverse();
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine($"ID = {e.Id.ToString()} Name = {e.Name} Gender = {e.Gender}" +
+                        $" Salary = {e.Salary.ToString("c")} Type Of Employee = {e.Type}");
+                }
+                Console.WriteLine();
+                SortEmployeeBySalary sortEmployeeBySalary = new SortEmployeeBySalary();
+                Console.WriteLine("Before Sorting Salaries:");
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Salary.ToString("c"));
+                }
+                listOfEmployeesPartTimeEmployee.Sort(sortEmployeeBySalary);
+                Console.WriteLine("After Sorting by Salaries in Ascending Order:");
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Salary.ToString("c"));
+                }
+                Console.WriteLine();
+                listOfEmployeesPartTimeEmployee.Reverse();
+                Console.WriteLine("After Sorting Salaries in Descending Order:");
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Salary.ToString("c"));
+                }
+                Console.WriteLine();
+                Console.WriteLine("Before Sorting Employee By Email:");
+                SortEmployeeByEmail sortEmployeeByEmail = new SortEmployeeByEmail();
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Email);
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("After Sorting Employee By Email in Ascending Order:");
+                listOfEmployeesPartTimeEmployee.Sort(sortEmployeeByEmail);
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Email);
+                }
+                Console.WriteLine();
+                Console.WriteLine("After Sorting Employee By Email Descending Order:");
+                listOfEmployeesPartTimeEmployee.Reverse();
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Email);
+                }
+                Console.WriteLine();
+                Console.WriteLine("Before Sorting by Gender:");
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Gender);
+                }
+                SortEmployeeByGender sortEmployeeByGender = new SortEmployeeByGender();
+                Console.WriteLine();
+                Console.WriteLine("After Sorting by Gender in Ascending Order:");
+                listOfEmployeesPartTimeEmployee.Sort(sortEmployeeByGender);
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Gender);
+                }
+                Console.WriteLine();
+                Console.WriteLine("After Sorting by Gender in Descending Order:");
+                listOfEmployeesPartTimeEmployee.Reverse();
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
+                {
+                    Console.WriteLine(e.Gender);
+                }
+                Console.WriteLine();
+
+                Console.WriteLine("Sorting By Name using Delegate:");
+                listOfEmployeesPartTimeEmployee.Sort((x, y) => { return x.Name.CompareTo(y.Name); });
               
-                List<Employee> fullTimeEmployee = Employee.FullTimeEmployee();
-                List<Employee> partTimeEmployee = Employee.PartTimeEmployee();
-
-                Console.WriteLine("List Of Full Time Employee");
-                foreach (Employee fullTimeEmp in fullTimeEmployee)
+                foreach (Employee e in listOfEmployeesPartTimeEmployee)
                 {
-                    Console.WriteLine($"Id = {fullTimeEmp.Id} Name = {fullTimeEmp.Name} Gender = {fullTimeEmp.Gender} " +
-                        $"Email = {fullTimeEmp.Email} Salary = {fullTimeEmp.Salary.ToString("c")} TypeOfEmployee = {fullTimeEmp.Type}");
+                    Console.WriteLine(e.Name);
                 }
-                Console.WriteLine();
-                Console.WriteLine("Part Time Employee");
-                foreach (Employee partTimeEmp in partTimeEmployee)
-                {
-                    Console.WriteLine($"Id = {partTimeEmp.Id} Name = {partTimeEmp.Name} Gender = {partTimeEmp.Gender}" +
-                      $" Email = {partTimeEmp.Email} Salary = {partTimeEmp.Salary.ToString("c")} TypeOfEmployee = {partTimeEmp.Type}");
-                }
-                Console.WriteLine();
-                Console.WriteLine("Add Some fulltime employee to the List of Part time Employee Before Sorting:");
-                partTimeEmployee.AddRange(fullTimeEmployee);
-                foreach (Employee employee in partTimeEmployee)
-                {
-                    Console.WriteLine($"Id = {employee.Id} Name = {employee.Name} Gender = {employee.Gender}" +
-                                         $" Email = {employee.Email} Salary = {employee.Salary.ToString("c")} TypeOfEmployee = {employee.Type}");
-                }
-                Console.WriteLine();
-                Console.WriteLine("After Sorting:");
-                partTimeEmployee.Sort();
-                foreach (Employee employee in partTimeEmployee)
-                {
-                    Console.WriteLine($"Id = {employee.Id} Name = {employee.Name} Gender = {employee.Gender}" +
-                                         $" Email = {employee.Email} Salary = {employee.Salary.ToString("c")} TypeOfEmployee = {employee.Type}");
-                }
-                Console.WriteLine();
-
             }
             catch (Exception ex)
             {

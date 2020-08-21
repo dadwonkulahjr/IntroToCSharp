@@ -7,7 +7,7 @@ namespace IntroToCSharp
     #region Delegate
     public delegate void MulticastDelegate(out int number);
     #endregion
-    public class Employee : IComparable<Employee>
+    public class Employee 
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -48,11 +48,36 @@ namespace IntroToCSharp
             };
         }
 
-        public int CompareTo(Employee other)
+       
+    }
+    public class SortEmployeeByName : IComparer<Employee>
+    {
+        public int Compare(Employee x, Employee y)
         {
-            return Name.CompareTo(other.Name);
+            return x.Name.CompareTo(y.Name);
         }
     }
-   
+
+    public class SortEmployeeBySalary : IComparer<Employee>
+    {
+        public int Compare(Employee x, Employee y)
+        {
+            return x.Salary.CompareTo(y.Salary);
+        }
+    }
+    public class SortEmployeeByGender : IComparer<Employee>
+    {
+        public int Compare(Employee x, Employee y)
+        {
+            return x.Gender.CompareTo(y.Gender);
+        }
+    }
+    public class SortEmployeeByEmail : IComparer<Employee>
+    {
+        public int Compare(Employee x, Employee y)
+        {
+            return x.Email.CompareTo(y.Email);
+        }
+    }
 
 }
